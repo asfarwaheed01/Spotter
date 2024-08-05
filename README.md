@@ -28,8 +28,8 @@ To set up this project locally, follow these steps:
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/asfarwaheed01/Spotter.git
+   cd Spotter
    ```
 
 2. **Install Dependencies**
