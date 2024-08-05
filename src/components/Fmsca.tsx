@@ -171,16 +171,16 @@ const Fmsca: React.FC<{ data: CsvRow[] }> = ({ data }) => {
                             )}
                         </TableBody>
                     </Table>
-                    <TablePagination
-                        rowsPerPageOptions={[5, 10, 25, 50]}
-                        component="div"
-                        count={filteredData.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                    />
                 </StyledTableContainer>
+                <TablePagination
+                    rowsPerPageOptions={[5, 10, 25, 50]}
+                    component="div"
+                    count={filteredData.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </Box>
             {/* @ts-ignore */}
             <DataDetailsModal open={modalOpen} handleClose={handleCloseModal} rowData={selectedRowData || {}} />
