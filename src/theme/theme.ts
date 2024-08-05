@@ -14,6 +14,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           minWidth: 750,
+          position: "relative",
         },
       },
     },
@@ -48,6 +49,9 @@ const theme = createTheme({
           backgroundColor: "#f5f5f5",
           color: "#333",
           fontWeight: "bold",
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
         },
       },
     },

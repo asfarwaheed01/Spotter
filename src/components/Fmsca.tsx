@@ -47,7 +47,6 @@ const Fmsca: React.FC<{ data: CsvRow[] }> = ({ data }) => {
     const handleRowClick = (rowData: CsvRow) => {
         setSelectedRowData(rowData);
         setModalOpen(true);
-        console.log(rowData);
     };
 
     const handleCloseModal = () => {
@@ -67,7 +66,7 @@ const Fmsca: React.FC<{ data: CsvRow[] }> = ({ data }) => {
             if (!filterValue) return true;
             // @ts-expect-error
             const cellValue = row[key as Partial<CsvRow>]?.toString().toLowerCase();
-            return cellValue === filterValue.toLowerCase();
+            return cellValue.includes(filterValue.toLowerCase());
         })
     );
 
@@ -120,7 +119,6 @@ const Fmsca: React.FC<{ data: CsvRow[] }> = ({ data }) => {
                                 ) : header === 'Power units' ? (
                                     <TextField
                                         type="number"
-                                        // variant="standard"
                                         variant="outlined"
                                         value={filters[header] || ''}
                                         onChange={(e) => handleFilterChange(header, e.target.value)}
@@ -129,7 +127,6 @@ const Fmsca: React.FC<{ data: CsvRow[] }> = ({ data }) => {
                                     />
                                 ) : (
                                     <TextField
-                                        // variant="standard"
                                         variant="outlined"
                                         value={filters[header] || ''}
                                         onChange={(e) => handleFilterChange(header, e.target.value)}
